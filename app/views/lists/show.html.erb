@@ -1,0 +1,26 @@
+<h4>List: <%= @list.name %></h14>   | <small><%= link_to "Delete", @list, method: :delete, date: {confirm: "Are you sure?"} %></small> | <small><%= link_to "Back to Lists", lists_path %></samll>
+<hr>
+<div class="container">
+  <title>Tasks</title>
+  <div class="row">
+    <div class="span4">
+        <%= render 'tasks/form' %>
+        <hr>
+        <p>Your Tasks</p>
+        <div class="well">
+          <h6>Incomplete:</h6>
+          <div class="tasks" id="incomplete_tasks">
+            <% @list.tasks.incomplete.each do |task| %>
+            	<%= render task %>
+            	<% end %>
+          </div>
+          <h6>Comlpete:</h6>
+          <div class="tasks" id="complete_tasks">
+            <% @list.tasks.complete.each do |task| %>
+              <%= render task %>
+            	<% end %>
+          </div>
+    </div>
+  </div>
+</div>
+
