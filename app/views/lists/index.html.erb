@@ -2,15 +2,15 @@
    <title>Lists</title>
    <div class="row">
       <div class="span4">
-    	  <%= render 'form' %>
+        <%= render 'form' %>
         <hr>
         <p>Your Lists</p>
         <div class="well">
-        	<ul>
-        	  <% @lists.each do |list| %>
-        	    <li><%= link_to list.name, list_path(list) %></li>
-        	    <% end %>
-        	</ul>
+          <ul>
+            <% @lists.each do |list| %>
+              <li><%= link_to list.name, list_path(list) %></li>
+              <% end %>
+          </ul>
         </div>
     </div>
   </div>
